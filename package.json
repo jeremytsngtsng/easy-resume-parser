@@ -1,5 +1,5 @@
 {
-  "name": "resume-parser",
+  "name": "easy-resume-parser",
   "version": "1.0.0",
   "description": "A NodeJS library to parse pdf, txt, doc and docx files to JSON and CSV",
   "main": "src/index.js",
