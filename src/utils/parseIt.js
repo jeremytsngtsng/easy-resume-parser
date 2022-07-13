@@ -3,6 +3,20 @@ var processing = require("./libs/processing");
 var logger = require("tracer").colorConsole();
 
 var parser = {
+  readFile: function (path, type, cbAfterParse) {
+    if (type === 'url') {
+      processing.runUrl(path, async (preppedFile, error) => {
+        return cbAfterParse(preppedFile);
+      }
+      );
+    } else {
+      processing.runFile(path, (preppedFile, error) => {
+        return cbAfterParse(preppedFile);
+      }
+      );
+    }
+  },
+
   parseToJSON: function(path, type, cbAfterParse) {
     const objParseBoy = new ParseBoy();
     if (type === "url") {

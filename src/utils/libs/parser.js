@@ -240,3 +240,11 @@ function parseDictionaryProfiles(row, Resume) {
 
   return modifiedRow;
 }
+
+/**
+ * 
+ * @param row
+ * @param Resume
+ * @returns {*}
+ */
+function; 

@@ -15,6 +15,18 @@ class ResumeParser {
     this.data = null;
   }
 
+  readFile() {
+    return new Promise((resolve, reject) => {
+      if (this.data) return resolve(this.data);
+      parseIt.readFile(this.path, this.type, (file, error) => {
+        if (error) {
+          return reject(error);
+        }
+        return resolve(file);
+      });
+    });
+  }
+
   parseToJSON() {
     return new Promise((resolve, reject) => {
       if (this.data) return resolve(this.data);
